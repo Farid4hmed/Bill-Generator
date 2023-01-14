@@ -1,0 +1,152 @@
+.parent {
+    background: #B7C3D7;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    position: absolute;
+    width: 900px;
+    height: 640px;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 7px;
+}
+
+.nav {
+    position: absolute;
+    width: 28%;
+    height: 95%;
+    background: #483EFF;
+    top: 50%;
+    left: 16%;
+    transform: translate(-50%, -50%);
+    border-radius: 7px;
+
+}
+
+.step1 {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 29px;
+    top: 10.4%;
+
+    background: #BCE0F6;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+}
+
+.step2 {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 29px;
+    top: 20.3%;
+
+    background: #BCE0F6;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+}
+.step3 {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 29px;
+    top: 30.5%;
+
+    background: #BCE0F6;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+}
+.pageNo {
+    position: absolute;
+    width: 20%;
+    height: 10%;
+    top: -37%;
+    left: 35%;
+    font-family: 'inter';
+    font-weight: 700;
+}
+
+.stepNo1{
+    position: absolute;
+    top: 6.7%;
+    left: 30%;
+    color: rgba(255, 255, 255, 0.46);
+    font-family: 'inter';
+    font-weight: 600;
+}
+.stepNo2{
+    position: absolute;
+    top: 16.5%;
+    left: 30%;
+    color: rgba(255, 255, 255, 0.46);
+    font-family: 'inter';
+    font-weight: 600;
+}
+.stepNo3{
+    position: absolute;
+    top: 27%;
+    left: 30%;
+    color: rgba(255, 255, 255, 0.46);
+    font-family: 'inter';
+    font-weight: 600;
+}
+
+.stepName1{
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    color: whitesmoke;
+    font-weight: 700;
+    font-family: 'inter';
+}
+
+.stepName2{
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    color: white;
+    font-weight: 700;
+    font-family: 'inter';
+}
+
+.stepName3{
+    position: absolute;
+    top: 30.3%;
+    left: 30%;
+    color: white;
+    font-weight: 700;
+    font-family: 'inter';
+}
+
+.goBack{
+    position: absolute;
+    top: 88.6%;
+    left: 37%;
+    background: white;
+    border: none;
+    color: gray;
+}
+
+.nextStep{
+    position: absolute;
+    top: 89.5%;
+    left: 80%;
+    background:#001127;
+    height: 6%;
+    width: 12%;
+    border-radius: 7px;
+    border: none;
+}
+
+.nextStep h3{
+    position: absolute;
+    bottom: -15%;
+    left: 15.5%;
+    color: white;
+
+}
