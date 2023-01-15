@@ -3,7 +3,40 @@
     top: 44.5%;
     left: 64%;
     transform: translate(-50%, -50%);
-    background: black;
     height: 85%;
     width: 60%;
+}
+
+.yourInfo{
+    height: 80%;
+    width: 80%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.heading{
+    color: #04285A;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 5%;
+    left: 7%;
+}
+
+input{
+    height: 20px;
+    width: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: visible;
+}
+
+h3{
+    position: absolute;
+
+    height: 20px;
+    width: 200px;
 }

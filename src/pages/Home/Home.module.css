@@ -6,22 +6,22 @@
 
 .container {
     position: absolute;
-    width: 900px;
-    height: 640px;
+    width: 950px;
+    height: 660px;
     background: white;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 7px;
+    border-radius: 10px;
 }
 
 .nav {
     position: absolute;
     width: 28%;
-    height: 95%;
+    height: 97%;
     background: #483EFF;
     top: 50%;
-    left: 16%;
+    left: 15%;
     transform: translate(-50%, -50%);
     border-radius: 7px;
 
@@ -76,7 +76,6 @@
     top: 6.7%;
     left: 30%;
     color: rgba(255, 255, 255, 0.46);
-    font-family: 'inter';
     font-weight: 600;
 }
 .stepNo2{
@@ -84,7 +83,6 @@
     top: 16.5%;
     left: 30%;
     color: rgba(255, 255, 255, 0.46);
-    font-family: 'inter';
     font-weight: 600;
 }
 .stepNo3{
@@ -92,7 +90,6 @@
     top: 27%;
     left: 30%;
     color: rgba(255, 255, 255, 0.46);
-    font-family: 'inter';
     font-weight: 600;
 }
 
@@ -101,8 +98,9 @@
     top: 10%;
     left: 30%;
     color: whitesmoke;
-    font-weight: 700;
+    font-weight: 800;
     font-family: 'inter';
+    letter-spacing: 1px;
 }
 
 .stepName2{
@@ -110,8 +108,9 @@
     top: 20%;
     left: 30%;
     color: white;
-    font-weight: 700;
+    font-weight: 800;
     font-family: 'inter';
+    letter-spacing: 1px;
 }
 
 .stepName3{
@@ -119,17 +118,19 @@
     top: 30.3%;
     left: 30%;
     color: white;
-    font-weight: 700;
+    font-weight: 800;
     font-family: 'inter';
+    letter-spacing: 1px;
 }
 
 .goBack{
     position: absolute;
-    top: 88.6%;
-    left: 37%;
+    top: 90%;
+    left: 35%;
     background: white;
     border: none;
     color: gray;
+    font-size: 19px;
 }
 
 .nextStep{
@@ -141,12 +142,50 @@
     width: 12%;
     border-radius: 7px;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nextStep h3{
-    position: absolute;
-    bottom: -15%;
-    left: 15.5%;
     color: white;
 
 }
+
+.one{
+    position: absolute;
+    top: 69%;
+}
+
+.two{
+    position: absolute;
+    top: 78%;
+}
+
+.three{
+    position: absolute;
+    top: 79.8%;
+    left: 41%;
+}
+
+.four1{
+    position: absolute;
+    top: 85%;
+    left: 61%;
+}
+
+.four2{
+    position: absolute;
+    top: 86%;
+    left: 71%;
+    transform: rotate(90deg);
+}
+
+.four3{
+    position: absolute;
+    top: 90%;
+    left: 65%;
+    transform: rotate(330deg);
+}
+
+
