@@ -1,32 +1,89 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SelectPlan from "../../components/SelectPlan/SelectPlan";
 import Summary from "../../components/Summary/Summary";
 import YourInfo from "../../components/YourInfo/YourInfo";
 import styles from "./Home.module.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Home() {
-    const [name, setName] = useState("Farid Ahmed");
-    const [email, setEmail] = useState("faridahmed@xyz.com");
-    const [phone, setPhone] = useState(9876543203);
-    const [plan, setPlan] = useState("Arcade");
-    const [total, setTotal] = useState("$9");
-    const [grandTotal, setGrandTotal] = useState("$9");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState();
+    const [plan, setPlan] = useState();
+    const [total, setTotal] = useState("");
+    const [grandTotal, setGrandTotal] = useState("");
+
+    const [monthlyStyles, setMonthlyStyles] = useState({ "color": "#001126", "font-weight": "700" });
+    const [yearlyStyles, setYearlyStyles] = useState({ "color": "#676767", "font-weight": "600" });
+
+    const [arcade, setArcade] = useState({});
+    const [advanced, setAdvanced] = useState({});
+    const [pro, setPro] = useState({});
+
+    const [next, setNext] = useState(0);
+
+    const [period, setPeriod] = useState(false);
+
+    const [err, setErr] = useState(false);
+
+    const stepColor = { "background": "#BCE0F6" };
+
+
+    function handleBack() {
+        if (next !== 0) setNext(next - 1);
+    }
+
+
+    function handleNext() {
+        if (next !== 2) setNext(next + 1);
+        else if (next === 2) {
+            console.log(plan);
+            if (!name || !email || !phone || !plan || !total || !grandTotal) setErr(true);
+            else {
+                setErr(false);
+                toast("Payment Successful!", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
+            }
+        }
+    }
+
+    useEffect(() => {
+        if (period === false) {
+            if (plan === 1) setGrandTotal("$9");
+            else if (plan === 2) setGrandTotal("$12");
+            else if (plan === 3) setGrandTotal("$15");
+        }
+        else {
+            if (plan === 1) setGrandTotal("$108");
+            else if (plan === 2) setGrandTotal("$144");
+            else if (plan === 3) setGrandTotal("$180");
+        }
+    }, [period, plan]);
 
     return (
         <div className={styles.parent}>
             <div className={styles.container}>
                 <div className={styles.nav}>
-                    <div className={styles.step1}>
+                    <div style={next === 0 ? stepColor : {}} className={styles.step1}>
                         <p className={styles.pageNo}>1</p>
                     </div>
                     <p className={styles.stepNo1}>STEP 1</p>
                     <p className={styles.stepName1}>YOUR INFO</p>
-                    <div className={styles.step2}>
+                    <div style={next === 1 ? stepColor : {}} className={styles.step2}>
                         <p className={styles.pageNo}>2</p>
                     </div>
                     <p className={styles.stepNo2}>STEP 2</p>
                     <p className={styles.stepName2}>SELECT PLAN</p>
-                    <div className={styles.step3}>
+                    <div style={next === 2 ? stepColor : {}} className={styles.step3}>
                         <p className={styles.pageNo}>3</p>
                     </div>
                     <p className={styles.stepNo3}>STEP 3</p>
@@ -50,14 +107,23 @@ export default function Home() {
                         <rect x="-1" y="12.1733" width="19.2782" height="5.86244" rx="2.93122" transform="rotate(-43.1042 -1 12.1733)" fill="#D9D9D9" />
                     </svg>
                 </div>
-                <YourInfo />
-                {/* <SelectPlan setPlan={setPlan} setTotal={setTotal} setGrandTotal={setGrandTotal}/> */}
-                {/* <Summary name={name} email={email} phone={phone} plan={plan} total={total} grandTotal={grandTotal}/> */}
+
+                {next === 0 ? (<YourInfo
+                    setName={setName} setEmail={setEmail} setPhone={setPhone}
+                    name={name} email={email} phone={phone} plan={plan} total={total} grandTotal={grandTotal}
+                />) : ""}
+                {next === 1 ? (<SelectPlan
+                    setTotal={setTotal} setPlan={setPlan} setPeriod={setPeriod} setMonthlyStyles={setMonthlyStyles} setYearlyStyles={setYearlyStyles} setAdvanced={setAdvanced} setArcade={setArcade} setPro={setPro}
+                    plan={plan} period={period} monthlyStyles={monthlyStyles} yearlyStyles={yearlyStyles} advanced={advanced} arcade={arcade} pro={pro}
+                />) : ""}
+                {next === 2 ? (<Summary name={name} email={email} phone={phone} plan={plan} total={total} grandTotal={grandTotal} period={period} err={err} />) : ""}
                 <div className={styles.footer}>
-                    <button className={styles.goBack}>Go Back</button>
-                    <button className={styles.nextStep}><h3>Next Step</h3></button>
+                    {next !== 0 ? <button onClick={handleBack} className={styles.goBack}>Go Back</button> : ""}
+                    <button onClick={handleNext} className={styles.nextStep}>{next === 2 ? (<h3>Pay Now</h3>) : (<h3>Next Step</h3>)}</button>
                 </div>
             </div>
+            <ToastContainer
+            />
         </div>
     );
 }

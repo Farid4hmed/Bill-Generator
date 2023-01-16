@@ -1,4 +1,4 @@
-.form{
+.form {
     position: absolute;
     top: 44.5%;
     left: 64%;
@@ -7,16 +7,16 @@
     width: 60%;
 }
 
-.yourInfo{
+.yourInfo {
     height: 80%;
     width: 80%;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.heading{
+.heading {
     color: #04285A;
     letter-spacing: 2px;
     position: absolute;
@@ -24,19 +24,81 @@
     left: 7%;
 }
 
-input{
-    height: 20px;
-    width: 150px;
+.outer {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    visibility: visible;
+    top: 20%;
+    height: 70%;
+    width: 70%;
+    background: lightblue;
 }
 
-h3{
-    position: absolute;
+.inner {
+    height: 90%;
+    width: 90%;
+}
 
+input {
+    opacity: 1;
+    width: 100px;
     height: 20px;
-    width: 200px;
+}
+
+.label1 {
+    letter-spacing: 1px;
+    color: #04285A;
+    font-weight: 500;
+    font-size: 20px;
+    position: absolute;
+    top: 27%;
+    left: 12.5%;
+}
+
+.name {
+    position: absolute;
+    top: 30%;
+    left: 7%;
+    width: 38%;
+    height: 6%;
+    border: 1px solid #9E9E9E;
+    border-radius: 2px;
+}
+
+.label2 {
+    letter-spacing: 1px;
+    color: #04285A;
+    font-weight: 500;
+    font-size: 20px;
+    position: absolute;
+    top: 43.5%;
+    left: 12.5%;
+}
+
+.email {
+    position: absolute;
+    top: 46.5%;
+    left: 7%;
+    width: 38%;
+    height: 6%;
+    border: 1px solid #9E9E9E;
+    border-radius: 2px;
+}
+
+.label3 {
+    letter-spacing: 1px;
+    color: #04285A;
+    font-weight: 500;
+    font-size: 20px;
+    position: absolute;
+    top: 59.5%;
+    left: 12.5%;
+}
+
+.phone {
+    position: absolute;
+    top: 62%;
+    left: 7%;
+    width: 38%;
+    height: 6%;
+    border: 1px solid #9E9E9E;
+    border-radius: 2px;
 }

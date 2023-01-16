@@ -35,3 +35,9 @@
     top: 77.5%;
     left: 90%;
 }
+ 
+.err{
+    position: absolute;
+    top: 90%;
+    color: red;
+} 

@@ -12,7 +12,7 @@ export default function Toggle({ label, toggled, onClick }) {
 
   return (
     <label>
-      <input type="checkbox" defaultChecked={isToggled} onClick={callback} />
+      <input className={styles.ip} type="checkbox" defaultChecked={isToggled} onClick={callback} />
       <span></span>
       <strong>{label}</strong>
     </label>
